@@ -1,0 +1,77 @@
+/* 1. Reset cài đặt mặc định và định dạng chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+/* 2. Thiết kế nền và căn giữa toàn bộ trang web */
+body {
+    background: linear-gradient(135deg, #1B4F93 0%, #0d2e5c 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 3. Khung bọc danh sách (Biến danh sách thành một bảng menu đẹp) */
+ul {
+    background: rgba(255, 255, 255, 0.1); /* Nền trắng mờ dạng kính cường lực */
+    backdrop-filter: blur(10px); /* Làm mờ hậu cảnh phía sau */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 16px; /* Bo tròn các góc khung */
+    list-style-type: none;
+    width: 100%;
+    max-width: 500px; /* Chiều rộng tối đa của menu */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Tạo bóng đổ sâu */
+}
+
+/* Tiêu đề giả lập cho menu nếu thích (Hoặc dùng để tạo khoảng cách) */
+ul::before {
+    content: "DANH MỤC BÀI TẬP";
+    display: block;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #00ffcc; /* Màu xanh neon làm điểm nhấn */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* 4. Định dạng các mục danh sách */
+ul li {
+    margin-bottom: 12px;
+}
+
+ul li:last-child {
+    margin-bottom: 0; /* Mục cuối cùng không cần khoảng cách dưới */
+}
+
+/* 5. Biến các thẻ <a> thành các nút bấm (Buttons) dài rộng */
+ul li a {
+    display: block; /* Trải dài hết chiều rộng vùng chứa */
+    padding: 14px 20px;
+    color: white;
+    font-size: 13pt;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease; /* Tạo hiệu ứng chuyển động mượt mà */
+}
+
+/* 6. Hiệu ứng đẹp mắt khi di chuột (Hover) vào nút bấm */
+ul li a:hover {
+    background: #ffffff;
+    color: #1B4F93; /* Đổi màu chữ trùng với màu nền web */
+    font-weight: bold;
+    transform: translateX(8px); /* Nút bấm dịch chuyển nhẹ sang phải */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}

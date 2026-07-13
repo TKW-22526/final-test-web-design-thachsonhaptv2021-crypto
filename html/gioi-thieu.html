@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>TRANG CHỦ</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Việt Nam - Giao diện mẫu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="../css/style.gioi-thieu.css">
+    <style>
+        /* Tùy chỉnh font chữ giống phong cách Honda */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        /* Hiệu ứng bo cong đặc trưng nối giữa các ô hình ảnh và chữ */
+        .curve-up {
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+    </style>
+	</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <div class="logo"  ><a href="../index.html">SH-HONDA</a></div>
+            <div class="slogan-box">
+                <div class="slogan-title">Welcome to our showroom!</div>
+                <div class="slogan-sub">Create • Transcend • Augment</div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <span class="status-text">Beyond limits, conquer the apex.</span>
+            <div class="search-wrapper">
+            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm xe...">
+            <button class="search-btn" id="searchBtn" type="button">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+
+        searchBtn.addEventListener('click', function(e) {
+            // Ngăn chặn sự kiện click lan ra ngoài
+            e.stopPropagation(); 
+            
+            // Nếu ô tìm kiếm đang ẩn -> Bật nó lên và đặt con trỏ chuột vào trong
+            if (!searchInput.classList.contains('active')) {
+                searchInput.classList.add('active');
+                searchInput.focus();
+            } else {
+                // Nếu đã mở và có chữ -> Thực hiện hành động tìm kiếm
+                if (searchInput.value.trim() !== "") {
+                    alert("Đang tìm kiếm cụm từ: " + searchInput.value);
+                    // Ở đây bạn có thể chuyển trang hoặc gọi API tìm kiếm, ví dụ:
+                    // window.location.href = "/search?q=" + encodeURIComponent(searchInput.value);
+                } else {
+                    // Nếu đã mở nhưng không có chữ -> Thu nhỏ lại
+                    searchInput.classList.remove('active');
+                }
+            }
+        });
+
+        // Bấm phím Enter để kích hoạt tìm kiếm nhanh
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim() !== "") {
+                alert("Đang tìm kiếm cụm từ: " + this.value);
+            }
+        });
+
+        // Click ra ngoài vùng tìm kiếm sẽ tự động thu nhỏ thanh tìm kiếm lại
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-wrapper')) {
+                searchInput.classList.remove('active');
+            }
+        });
+    </script>
+        </div>
+    </header>
+        
+
+
+
+ <div class="red-nav-container">
+        <ul class="red-menu">
+            <li><a href="san-pham.html">Xe tay ga</a></li>
+            <li><a href="san-pham.2.html">Xe số</a></li>
+            <li class="active"><a href="san-pham.3.html">Xe côn tay</a></li>
+            <li><a href="san-pham.4.html">Xe phân khối lớn</a></li>
+            <li><a href="san-pham.5.html">Xe điện</a></li>
+        </ul>
+
+        <ul class="sub-nav">
+            
+            <li><a href="lien-he.html">Liên hệ </a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+	<main class="main-grid">
+    <a href="san-pham.html" class="grid-column block hover:no-underline">
+        <div class="grid-column">
+            <div class="text-block">
+                <h2 class="title-text">Xe tay ga</h2>
+                <p class="sub-text">FEEL THE PERFORMANCE</p>
+            </div>
+            <div class="plus-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="image-wrapper">
+                <div class="bg-zoom" style="background-image: url('../assets/sh-350i-2026.jpg');"></div>
+                
+            </div>
+        </div>
+    </a>
+
+    <a href="san-pham.2.html" class="grid-column block hover:no-underline">
+        <div class="grid-column">
+            <div class="image-wrapper align-end">
+                <div class="bg-zoom" style="background-image: url('../assets/anh.2.jpg');"></div>
+                
+            </div>
+            <div class="plus-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="text-block bg-light-gray">
+                <h2 class="title-text">Xe số</h2>
+                <p class="sub-text">LIVE YOUR DREAM</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="san-pham.3.html" class="grid-column block hover:no-underline">
+        <div class="grid-column">
+            <div class="text-block">
+                <h2 class="title-text">Về côn tay</h2>
+                <p class="sub-text">TRANSCEND</p>
+            </div>
+            <div class="plus-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="image-wrapper">
+                <div class="bg-zoom" style="background-image: url('../assets/xetaycon.jpg');"></div>
+                
+            </div>
+        </div>
+    </a>
+
+    <a href="san-pham.4.html" class="grid-column block hover:no-underline">
+        <div class="grid-column">
+            <div class="image-wrapper align-end">
+                <div class="bg-zoom" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80');"></div>
+                
+            </div>
+            <div class="plus-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="text-block bg-light-gray leading-tight">
+                <h2 class="title-text">Xe phân khối lớn</h2>
+                <p class="sub-text">SAFETY FOR EVERYONE</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="san-pham.5.html" class="grid-column block hover:no-underline">
+        <div class="grid-column">
+            <div class="text-block leading-tight">
+                <h2 class="title-text">Xe điện</h2>
+                <p class="sub-text">AUGMENT RACING SPIRIT</p>
+            </div>
+            <div class="plus-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="image-wrapper">
+                <div class="bg-zoom" style="background-image: url('../assets/D_4.png');"></div>
+                
+            </div>
+        </div>
+    </a>
+</main>
+
+
+</body>
+	
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Thông Tin Chi Tiết Sản Phẩm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.chititet.css">
+</head>
+<body>
+
+    <div id="main-content-wrapper">
+        
+        <header class="main-header">
+            <div class="header-left">
+                <div class="logo">SH-HONDA</div>
+                <div class="slogan-box">
+                    <div class="slogan-title">Welcome to our showroom!</div>
+                    <div class="slogan-sub">Create • Transcend • Augment</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="status-text">Beyond limits, conquer the apex.</span>
+            </div>
+        </header>
+
+        <div class="red-nav-container bg-[#1b0d79] p-3 text-white">
+            <ul class="red-menu flex gap-4 m-0 p-0 list-none">
+                <li><a href="san-pham.3.html" class="hover:underline text-white text-decoration-none">← Quay lại Danh sách sản phẩm</a></li>
+            </ul>
+        </div>
+
+        <div class="breadcrumb py-2 px-4 bg-gray-100 text-sm">
+            <div class="container">
+                <a href="san-pham.3.html" class="text-gray-600 text-decoration-none">Trang chủ</a> &gt; 
+                <a href="san-pham.3.html" class="text-gray-600 text-decoration-none">Xe tay ga</a> &gt; 
+                <span id="breadcrumb-current" class="font-semibold text-gray-800">Đang tải...</span>
+            </div>
+        </div>
+
+<section class="hero-section container my-4 relative overflow-hidden rounded-2xl" style="min-height: 280px;">
+    
+    <div class="hero-video-bg absolute inset-0 w-full h-full z-0">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="hero-content relative z-10 p-5 md:p-10 bg-gradient-to-r from-white/90 via-white/40 to-transparent h-full flex flex-col justify-center">
+        <div class="hero-badge  font-bold mb-2">Honda – Luôn vì Bạn</div>
+        <div class="product-title-wrap">
+            <span class="tag-new">NEW</span>
+            <h1 class="text-4xl font-extrabold mt-2 text-dark" id="hero-name">ĐANG TẢI...</h1>
+            <div class="text-2xl font-bold text-gray-700 mt-1">LÁI CHẤT - SỐNG PHIÊU</div>
+        </div>
+    </div>
+</section>
+
+        <div class="product-sub-nav sticky top-0 z-50 shadow-sm bg-white">
+            <div class="container sub-nav-wrap flex justify-between items-center py-2">
+                <div class="dropdown-select">
+                    <select class="form-select form-select-sm" id="select-box-name">
+                        <option>Đang tải...</option>
+                    </select>
+                </div>
+                <div class="sub-nav-links text-sm">
+                    <a href="#gia" class="active text-decoration-none mx-2">Giá </a>
+                    <a href="#thietke" class="text-decoration-none mx-2">Thiết kế</a>
+                    <a href="#dongco" class="text-decoration-none mx-2">Động cơ</a>
+                </div>
+            </div>
+        </div>
+
+        <section id="gia" class="py-5 bg-white border-b">
+            <div class="container grid-2">
+                <div class="info-block">
+                    
+                    <div class="price-box p-3 bg-gray-50 rounded-lg">
+                        <span class="block text-sm text-gray-500">Giá bán lẻ đề xuất</span>
+                        <span class="price-value" id="dynamic-price">000.000.000 VNĐ</span>
+                    </div>
+                </div>
+                <div class="visual-block-center text-center relative">
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-100 font-black text-7xl tracking-widest select-none z-0" id="watermark">HONDA</div>
+                    <img src="" alt="Hình ảnh xe" id="dynamic-image" class="mx-auto relative z-10 max-h-80 object-contain">
+                </div>
+            </div>
+        </section>
+
+        <section id="thietke" class="border-b bg-white">
+            <div class="grid-split">
+                <div class="image-side bg-gray-200 flex items-center justify-center p-4">
+                    <img src="" alt="Thiết kế xe" id="design-image" class="max-h-72 object-contain">
+                </div>
+                <div class="content-side bg-[#1b0d79] p-5 flex flex-col justify-center text-white">
+                    <h3 class="text-sm font-bold tracking-wider opacity-80">THIẾT KẾ</h3>
+                    <h4 class="text-2xl font-bold my-2" id="design-title">Hệ thống chiếu sáng LED tân tiến</h4>
+                    <p class="text-sm leading-relaxed opacity-90" id="dynamic-description">Đang tải dữ liệu mô tả chi tiết của dòng xe...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dongco" class="border-b bg-white">
+            <div class="grid-split row-reverse">
+                <div class="image-side bg-gray-200 flex items-center justify-center p-4">
+                    <img src="" alt="động cơ" id="engine-image" class="max-h-72 object-contain rounded-lg">
+                </div>
+                <div class="content-side p-5 flex flex-col justify-center">
+                    <h3 class="text-sm font-bold tracking-wider text-gray-400">ĐỘNG CƠ</h3>
+                    <h4 class="text-2xl font-bold my-2 text-blue-900" id="engine-title">Khối Động Cơ Đột Phá Mới</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed" id="engine-description">Đang nạp thông số động cơ từ hệ thống...</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer bg-gray-900 text-gray-400 text-xs py-5 mt-5">
+            <div class="container text-center">
+                <div class="header-left">
+            <div class="logo">SH-HONDA</div>
+            <div class="slogan-box">
+                <div class="slogan-title">Welcome to our showroom!</div>
+                <div class="slogan-sub">Create • Transcend • Augment</div>
+            </div>
+            <div class="footer-links-col">
+                <h4>Xe tay ga</h4>
+                <a href="#">SH350i</a><a href="#"> Vision</a><a href="#"> Vario</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Xe số</h4>
+                <a href="#">Super Cub C125</a> <a href="#"> Future 125 FI</a><a href="#"> Honda CT125g</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Xe côn tay</h4>
+                <a href="#">CBR150R</a><a href="#"> WINNER R</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Xe phân khối lớn</h4>
+                <a href="#">CBR1000RR-R Fireblade SP 2024</a><a href="#">Africa Twin 2026 - Bản Adventure Sports</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Xe điện</h4>
+                <a href="#">Honda UC3</a><a href="#">Honda UCv e</a><a href="#">Honda ICON e</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../js/script.3.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('masp');
+
+            if (typeof product === 'undefined') {
+                document.getElementById("main-content-wrapper").innerHTML = `
+                    <div class="text-center p-5">
+                        <h2 class="text-danger">Lỗi: Mảng 'product' chưa được định nghĩa trong file script.3.js!</h2>
+                        <a href="san-pham.3.html" class="btn btn-primary mt-3">Quay lại danh sách</a>
+                    </div>`;
+                return;
+            }
+
+            const foundProduct = product.find(obj => String(obj.id) === String(productId));
+
+            if (foundProduct) {
+                // --- 1. ĐỔ CÁC DỮ LIỆU CƠ BẢN (GIÁ) ---
+                document.title = "Chi tiết xe " + foundProduct.name;
+                document.getElementById('breadcrumb-current').innerText = foundProduct.name;
+                document.getElementById('hero-name').innerText = foundProduct.name;
+                document.getElementById('watermark').innerText = foundProduct.name;
+                document.getElementById('select-box-name').innerHTML = `<option>${foundProduct.name}</option>`;
+                document.getElementById('dynamic-price').innerText = foundProduct.price;
+                document.getElementById('dynamic-image').src = foundProduct.image;
+                document.getElementById('dynamic-image').alt = foundProduct.name;
+                
+                // --- 2. ĐỔ DỮ LIỆU THIẾT KẾ ---
+                document.getElementById('design-image').src = foundProduct.image;
+                if (foundProduct.design_title) {
+                    document.getElementById('design-title').innerText = foundProduct.design_title;
+                } else {
+                    document.getElementById('design-title').innerText = "Đặc tính nổi bật trên " + foundProduct.name;
+                }
+                document.getElementById('dynamic-description').innerText = foundProduct.description || "Dòng xe sở hữu thiết kế đột phá cùng trải nghiệm vận hành lý tưởng.";
+
+                // --- 3. ĐỔ DỮ LIỆU ĐỘNG CƠ THEO TỪNG LOẠI ---
+                if (foundProduct.name) {
+                    document.getElementById('engine-title').innerText = "Hiệu Suất Động Cơ " + foundProduct.name;
+                }
+
+                if (foundProduct.spec_engine) {
+                    document.getElementById('engine-description').innerHTML = `<strong>Thông số kỹ thuật:</strong> ${foundProduct.spec_engine}.<br><br><strong>Dung tích bình xăng:</strong> ${foundProduct.spec_fuel || 'Đang cập nhật'}.`;
+                } else {
+                    document.getElementById('engine-description').innerHTML = "Thông số kỹ thuật của dòng xe đang được cập nhật.";
+                }
+
+                // Đổi ảnh động cơ tương ứng
+                if (foundProduct.detail_image) {
+                    document.getElementById('engine-image').src = foundProduct.detail_image;
+                } else {
+                    document.getElementById('engine-image').src = foundProduct.image; 
+                }
+
+            } else {
+                document.getElementById("main-content-wrapper").innerHTML = `
+                    <div class="container text-center py-5">
+                        <div class="card shadow p-5 max-w-md mx-auto my-5 border-0 rounded-3">
+                            <h2 class="text-danger fw-bold mb-3">Sản phẩm không tồn tại!</h2>
+                            <p class="text-muted mb-4">Mã số sản phẩm này không có trong kho dữ liệu hoặc đã bị ẩn đi.</p>
+                            <a href="san-pham.3.html" class="btn btn-dark w-100 py-2">Quay lại danh sách xe</a>
+                        </div>
+                    </div>`;
+            }
+        });
+    </script>
+</body>
+</html>

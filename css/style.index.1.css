@@ -1,0 +1,312 @@
+/* Khởi tạo cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body {
+    background-color: #f3f4f6; /* tương đương bg-gray-100 */
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; /* tương đương text-sm */
+}
+
+/* Định hình Thanh Header */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb; /* tương đương border-gray-200 */
+    padding: 16px 24px; /* tương đương px-6 py-4 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Khối bên trái: Logo & Slogan */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* tương đương space-x-6 */
+}
+
+.logo {
+    color: #1b0d79; /* tương đương text-red-600 */
+    font-weight: 900; /* tương đương font-black */
+    font-size: 1.5rem; /* tương đương text-2xl */
+    letter-spacing: 0.05em; /* tương đương tracking-wider */
+}
+
+.slogan-box {
+    border-left: 1px solid #d1d5db; /* tương đương border-gray-300 */
+    padding-left: 24px; /* tương đương pl-6 */
+}
+
+.slogan-title {
+    font-weight: 700; /* tương đương font-bold */
+    color: #1f2937; /* tương đương text-gray-800 */
+    font-size: 1rem; /* tương đương text-base */
+}
+
+.slogan-sub {
+    font-size: 10px; /* tương đương text-[10px] */
+    color: #6b7280; /* tương đương text-gray-500 */
+    letter-spacing: 0.1em; /* tương đương tracking-widest */
+    text-transform: uppercase;
+}
+
+/* Khối bên phải: Nút mạng xã hội */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* tương đương space-x-4 */
+    color: #4b5563; /* tương đương text-gray-600 */
+}
+
+.status-text {
+    font-size: 10px; /* tương đương text-xs */
+    font-weight: 500; /* tương đương font-medium */
+}
+
+
+
+
+
+
+.red-nav-container {
+            background-color: #222; /* Phần nền tối bên phải */
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 45px;
+        }
+.red-menu {
+            background-color: #1b0d79;
+            display: flex;
+            list-style: none;
+            height: 100%;
+            align-items: center;
+            padding-left: 40px;
+            padding-right: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Tạo góc vát nhọn phía bên phải menu đỏ */
+        .red-menu::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 45px solid transparent;
+            border-left: 20px solid #1b0d79;
+        }
+
+        .red-menu li a {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Mục đang được chọn (Active) */
+        .red-menu li.active {
+            background-color: #1b0d79;
+        }
+
+        /* Sub-menu bên cạnh khối màu đỏ */
+        .sub-nav {
+            display: flex;
+            list-style: none;
+            padding-left: 40px;
+            gap: 20px;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .sub-nav li {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .sub-nav li:hover {
+            color: #ccc;
+        }
+
+        /* Ký hiệu mũi tên xuống cho dropdown */
+        .arrow-down::after {
+            content: ' ⌃';
+            display: inline-block;
+            transform: rotate(180deg);
+            font-size: 10px;
+            margin-left: 4px;
+        }
+
+        /* Thả menu con xuống khi click (Sẽ điều khiển bằng JS) */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 33px;
+            left: 0;
+            background-color: #fff;
+            color: #333;
+            list-style: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            min-width: 180px;
+            z-index: 10;
+        }
+
+        .dropdown-menu li {
+            padding: 10px 15px;
+            font-size: 13px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-menu li:hover {
+            background-color: #f5f5f5;
+            color: #cc0000;
+        }
+
+        .show-dropdown {
+            display: block !important;
+        }
+
+
+/*tìm kiếm*/
+/* --- KHUNG HEADER GIẢ LẬP --- */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e297a;
+        }
+
+        /* --- KHU VỰC THANH TÌM KIẾM (GÓC PHẢI) --- */
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Ô nhập dữ liệu tìm kiếm */
+        .search-input {
+            width: 0; /* Mặc định ẩn bằng cách cho width bằng 0 */
+            opacity: 0;
+            padding: 6px 0;
+            border: none;
+            border-bottom: 2px solid #1e297a; /* Đường gạch chân màu xanh */
+            outline: none;
+            font-size: 14px;
+            transition: all 0.4s ease; /* Hiệu ứng bung ra mượt mà */
+            background: transparent;
+        }
+
+        /* Khi được kích hoạt class .active từ JavaScript, ô nhập sẽ bung ra */
+        .search-input.active {
+            width: 200px; /* Độ rộng khi mở ra */
+            opacity: 1;
+            padding: 6px 10px;
+            margin-right: 8px;
+        }
+
+        /* Nút Kính lúp */
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .search-btn:hover {
+            transform: scale(1.1); /* Phóng to nhẹ khi di chuột */
+        }
+
+        /* Biểu tượng kính lúp vẽ bằng SVG cho nét và nhẹ */
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #333; /* Màu kính lúp */
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+
+        
+
+
+
+ /* --- 5. BANNER CHÍNH (HERO BANNER) --- */
+.hero-banner {
+    width: 100%;
+    /* TĂNG CHIỀU CAO Ở ĐÂY: Thay 480px thành 650px (hoặc 100vh nếu muốn tràn màn hình) */
+    height: 650px; 
+    
+    /* Thay link ảnh thật vào đây nếu cần */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1920') no-repeat center center/cover;
+                
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-sub {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* --- RESPONSIVE TRÊN DI ĐỘNG --- */
+@media (max-width: 992px) {
+    .top-bar, .sub-nav { display: none; }
+    .red-menu { width: 100%; padding-left: 20px; }
+    
+    /* Gợi ý thêm: Trên di động nên thu nhỏ chiều cao lại một chút cho cân đối */
+    .hero-banner { height: 450px; } 
+    
+    .hero-title { font-size: 32px; }
+    .hero-sub { font-size: 15px; }
+}
+
+
+       

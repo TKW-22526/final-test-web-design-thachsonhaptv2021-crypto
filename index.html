@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>TRANG CHỦ</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Việt Nam - Giao diện mẫu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="css/style.index.1.css">
+    <style>
+        /* Tùy chỉnh font chữ giống phong cách Honda */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        /* Hiệu ứng bo cong đặc trưng nối giữa các ô hình ảnh và chữ */
+        .curve-up {
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+    </style>
+	</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <div class="logo">SH-HONDA</div>
+            <div class="slogan-box">
+                <div class="slogan-title">Welcome to our showroom!</div>
+                <div class="slogan-sub">Create • Transcend • Augment</div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <span class="status-text">Beyond limits, conquer the apex.</span>
+
+            
+            <div class="search-wrapper">
+            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm xe...">
+            <button class="search-btn" id="searchBtn" type="button">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+
+        searchBtn.addEventListener('click', function(e) {
+            // Ngăn chặn sự kiện click lan ra ngoài
+            e.stopPropagation(); 
+            
+            // Nếu ô tìm kiếm đang ẩn -> Bật nó lên và đặt con trỏ chuột vào trong
+            if (!searchInput.classList.contains('active')) {
+                searchInput.classList.add('active');
+                searchInput.focus();
+            } else {
+                // Nếu đã mở và có chữ -> Thực hiện hành động tìm kiếm
+                if (searchInput.value.trim() !== "") {
+                    alert("Đang tìm kiếm cụm từ: " + searchInput.value);
+                    // Ở đây bạn có thể chuyển trang hoặc gọi API tìm kiếm, ví dụ:
+                    // window.location.href = "/search?q=" + encodeURIComponent(searchInput.value);
+                } else {
+                    // Nếu đã mở nhưng không có chữ -> Thu nhỏ lại
+                    searchInput.classList.remove('active');
+                }
+            }
+        });
+
+        // Bấm phím Enter để kích hoạt tìm kiếm nhanh
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim() !== "") {
+                alert("Đang tìm kiếm cụm từ: " + this.value);
+            }
+        });
+
+        // Click ra ngoài vùng tìm kiếm sẽ tự động thu nhỏ thanh tìm kiếm lại
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-wrapper')) {
+                searchInput.classList.remove('active');
+            }
+        });
+    </script>
+        </div>
+    </header>
+
+
+<p>
+ <div class="red-nav-container">
+        <ul class="red-menu">
+            <li><a href="html/gioi-thieu.html">Xe tay ga</a></li>
+            <li><a href="html/gioi-thieu.html">Xe số</a></li>
+            <li class="active"><a href="html/gioi-thieu.html">Xe côn tay</a></li>
+            <li><a href="html/gioi-thieu.html">Xe phân khối lớn</a></li>
+            <li><a href="html/gioi-thieu.html">Xe điện</a></li>
+        </ul>
+
+        <ul class="sub-nav">
+            
+            
+            <li><a href="html/lien-he.html">Liên hệ </a></li>
+            
+
+        </ul>
+    </div>
+</p>
+
+
+
+<a href="html/gioi-thieu.html" class="hero-banner-link">
+    <div class="hero-banner">
+        <div class="hero-content">
+            <p class="hero-sub">Honda viết tiếp ước mơ với tầm nhìn mang lại</p>
+            <h1 class="hero-title">Niềm vui mở rộng<br>tiềm năng cuộc sống</h1>
+        </div>
+    </div>
+</a>
+
+<style>
+    .hero-banner-link {
+        display: block;
+        text-decoration: none;
+        color: inherit; /* Giữ nguyên màu chữ vốn có của class hero-sub và hero-title */
+    }
+    .hero-banner {
+        cursor: pointer; /* Biến con trỏ chuột thành hình bàn tay khi rên vào banner */
+    }
+</style>
+
+
+<script>
+    function toggleDropdown(event) {
+        // Ngăn chặn sự kiện lan ra ngoài
+        event.stopPropagation();
+        
+        // Lấy menu con nằm trong mục vừa click
+        const currentDropdown = event.currentTarget.querySelector('.dropdown-menu');
+        
+        // Đóng tất cả các dropdown khác đang mở trước đó
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            if (menu !== currentDropdown) {
+                menu.classList.remove('show-dropdown');
+            }
+        });
+
+        // Bật/tắt menu con được chọn
+        if (currentDropdown) {
+            currentDropdown.classList.toggle('show-dropdown');
+        }
+    }
+
+    // Đóng dropdown khi click bất kỳ đâu ngoài màn hình
+    window.onclick = function() {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('show-dropdown');
+        });
+    }
+</script>
+
+
+
+
+
+</body>
+	
+</html>

@@ -1,0 +1,257 @@
+/* --- KHỞI TẠO CƠ BẢN --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     
+}
+
+body {
+    background-color: #f3f4f6;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* --- THANH HEADER PHÍA TRÊN --- */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Thay đổi màu chữ LOGO sang màu xanh chủ đạo mới */
+.logo {
+    color: #1b0d79; 
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.slogan-box {
+    border-left: 1px solid #d1d5db;
+    padding-left: 24px;
+}
+
+.slogan-title {
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.slogan-sub {
+    font-size: 10px;
+    color: #6b7280;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #4b5563;
+}
+
+.status-text {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* --- VÙNG ĐIỀU HƯỚNG MENU CHÉO (NAVBAR) --- */
+.red-nav-container {
+    background-color: #222222; /* Nền đen của thanh bên phải */
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 45px;
+}
+
+/* Chuyển màu nền khối phân loại thành màu xanh #1b0d79 */
+.red-menu {
+    background-color: #1b0d79; 
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 30px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+}
+
+/* Tạo góc vát nhọn chéo đổi đuôi sang màu xanh #1b0d79 */
+.red-menu::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 45px solid transparent;
+    border-left: 20px solid #1b0d79;
+}
+
+.red-menu li a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+.red-menu li a:hover {
+    color: #ffcc00; /* Hiệu ứng đổi màu chữ vàng khi rê chuột */
+}
+
+/* Chỉnh vùng trạng thái đang chọn trùng khớp màu xanh #1b0d79 */
+.red-menu li.active {
+    background-color: #1b0d79;
+}
+
+/* --- KHỐI MENU PHỤ BÊN PHẢI (SUB NAV) --- */
+.sub-nav {
+    display: flex;
+    list-style: none;
+    padding-left: 40px;
+    gap: 20px;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.sub-nav li {
+    position: relative;
+    cursor: pointer;
+}
+
+.sub-nav li:hover {
+    color: #ffcc00;
+}
+
+.arrow-down::after {
+    content: ' ⌃';
+    display: inline-block;
+    transform: rotate(180deg);
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+/* --- MENU CON DROPDOWN THẢ XUỐNG --- */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    background-color: #ffffff;
+    color: #333333;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    min-width: 180px;
+    z-index: 10;
+    padding: 0;
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.dropdown-menu li a {
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+/* Rê chuột vào liên kết con chuyển màu chữ sang màu xanh #1b0d79 */
+.dropdown-menu li:hover {
+    background-color: #f5f5f5;
+}
+.dropdown-menu li:hover a {
+    color: #1b0d79; 
+}
+
+.show-dropdown {
+    display: block !important;
+}
+
+/* --- KHU VỰC THANH TÌM KIẾM --- */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    padding: 6px 0;
+    border: none;
+    border-bottom: 2px solid #1b0d79; /* Đường gạch chân tìm kiếm màu xanh mới */
+    outline: none;
+    font-size: 14px;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.search-input.active {
+    width: 200px;
+    opacity: 1;
+    padding: 6px 10px;
+    margin-right: 8px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.search-btn:hover {
+    transform: scale(1.1);
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #333333;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
+
+
+
+
+
+
+
+
+
