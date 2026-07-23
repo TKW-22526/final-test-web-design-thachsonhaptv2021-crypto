@@ -308,11 +308,11 @@ body {
 }
 
 .bg-red-black {
-    background: linear-gradient(135deg, #0025cc 50%, #000 50%);
+    background: linear-gradient(135deg, #0025cc 50%, #fbf9f9 50%);
 }
 
 .bg-blue-black {
-    background: linear-gradient(135deg, #002266 50%, #000 50%);
+    background: linear-gradient(135deg, #002266 50%, #f3f1f1 50%);
 }
 
 /* Giá bán hiển thị */

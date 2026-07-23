@@ -61,7 +61,9 @@
             } else {
                 // Nếu đã mở và có chữ -> Thực hiện hành động tìm kiếm
                 if (searchInput.value.trim() !== "") {
-                    alert("Đang tìm kiếm cụm từ: " + searchInput.value);
+    // Chuyển hướng sang trang tim-kiem.html kèm theo từ khóa trên URL
+    window.location.href = "html/tim-kiem.html?q=" + encodeURIComponent(searchInput.value.trim());
+
                     // Ở đây bạn có thể chuyển trang hoặc gọi API tìm kiếm, ví dụ:
                     // window.location.href = "/search?q=" + encodeURIComponent(searchInput.value);
                 } else {
